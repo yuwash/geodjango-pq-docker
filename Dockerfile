@@ -2,8 +2,8 @@ FROM continuumio/miniconda3:latest
 
 ENV GEODJANGO_ENV_PATH=/opt/conda/envs/geodjango
 RUN set -ex \
-	&& conda create -y -p "$GEODJANGO_ENV_PATH" -c conda-forge python=3.5 \
-	&& conda install -y -p "$GEODJANGO_ENV_PATH" -c conda-forge \
+	&& conda create -y -q -p "$GEODJANGO_ENV_PATH" -c conda-forge python=3.5 \
+	&& conda install -y -q -p "$GEODJANGO_ENV_PATH" -c conda-forge \
 		django psycopg2 numpy pyproj scipy shapely libgdal=2.2.1
 
 ADD geodjangosh /usr/bin/geodjangosh
